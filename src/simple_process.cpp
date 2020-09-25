@@ -1,6 +1,5 @@
 #include <signal.h>
 #include <unistd.h>
-
 #include <fstream>
 
 int main(int argc, char *argv[])
