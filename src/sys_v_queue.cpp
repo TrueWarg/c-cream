@@ -20,17 +20,17 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    key_t key = ftok(key_path, 1);
+    const key_t key = ftok(key_path, 1);
 
-    int message_id = msgget(key, IPC_CREAT | 0666);
+    const int message_id = msgget(key, IPC_CREAT | 0666);
     if (message_id == -1) {
         cout << "Error while message receiving" << endl;
         return -1;
     }
 
-    int recieved_length = msgrcv(message_id, &message, sizeof(message), 0, 0);
+    const int recieved_length = msgrcv(message_id, &message, sizeof(message), 0, 0);
 
-    int output_fd = open("/home/box/message.txt", O_CREAT | O_WRONLY | O_TRUNC);
+    const int output_fd = open("/home/box/message.txt", O_CREAT | O_WRONLY | O_TRUNC);
     if (output_fd == -1) {
         cout << "Error while opening output file" << endl;
         return -1;
