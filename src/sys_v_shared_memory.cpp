@@ -6,8 +6,8 @@
 int main(int argc, char *argv[])
 {
     const int memory_size = 1024 * 1024;
-    key_t key = ftok("/tmp/mem.temp", 1);
-    int shmid = shmget(key, memory_size, IPC_CREAT | 0666);
+    const key_t key = ftok("/tmp/mem.temp", 1);
+    const int shmid = shmget(key, memory_size, IPC_CREAT | 0666);
     char *attached = (char *)shmat(shmid, 0, 0);
     for (int i = 0; i < memory_size; i++)
     {
