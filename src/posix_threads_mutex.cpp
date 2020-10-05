@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <fstream>
 
-// just random calling func (it may not work)
+// just random calling func (it must not work)
 void* handler(void* arg)
 {
     return 0;
